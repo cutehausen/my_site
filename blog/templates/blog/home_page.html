@@ -9,9 +9,21 @@
  <h1>Hellllo. I am Gaaaaary. Welcome to my blog!</h1>
 
 <!-- Blog Post -->
- <h2>My First Blog Post!!!!!</h2>
- <p>Here is my first bolg post. Bazinga~~~~~~</p>
+ <h2><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1523848731&di=1f5cf42ff1427aea7583227920678f0a&src=http://p2.ifengimg.com/a/2017_22/5b957ba22443e6b_size201_w600_h338.jpg"></h2>
+ <p>Here is my first blog post. Bazinga~~~~~~</p>
 
+<!-- Like And Comment -->
+ <button>Like</button>
+ <h2>Leave a Comment</h2>
+ <form action="{% url 'blog:home_page' %}" method="POST">
+ {% csrf_token %}
+ <input type="text" placeholder="Please Enter Your username" name="username"><br><br>
+ <textarea name="comment" placeholder="Please Enter Your Comment"></textarea><br>
+ <input type="submit" value="Post Me!">
+ </form>
+
+<h2>Comments</h2>
+ User {{username}} says: {{comment}}
  
 </body>
 </html>
